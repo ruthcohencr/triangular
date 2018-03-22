@@ -36,7 +36,7 @@ export class PointsComponent implements OnInit {
       // go to tringular page display
       this.router.navigateByUrl('/tringular-display');
     }
-    else console.log("no input for tringular");
+    else console.log("no input for triangular");
   }
 
   ngOnInit() {
