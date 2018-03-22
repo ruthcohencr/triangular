@@ -4,29 +4,69 @@
   </h3>
 </div>
 
-<form>
+<form #pointsForm="ngForm" autocomplete="off" (ngSubmit)="submitPoints(pointsForm)">
+
+    <div class="form-group form-part">
+        <label for="x1"> x1: </label>
+        <div class="flex-display">
+          <input ngModel name="x1" type="number" #x1="ngModel" required 
+          class="form-control" placeholder="100">
+          <div class="alert alert-danger" *ngIf="x1.touched && !x1.valid">
+            <div *ngIf="x1.errors.required">x1 הכרחי</div>
+          </div>
+        </div>
+    
+        <label for="y1"> y1: </label>
+        <div class="flex-display">
+          <input ngModel name="y1" type="number" #y1="ngModel" required 
+          class="form-control" placeholder="100">
+          <div class="alert alert-danger" *ngIf="y1.touched && !y1.valid">
+            <div *ngIf="y1.errors.required">y1 הכרחי</div>
+          </div>
+        </div>
+      </div>
 
   <div class="form-group form-part">
-    <label for="x1"> x1: </label>
-    <input name="x1" type="number" class="form-control">
-    <label for="y1"> y1: </label>
-    <input name="y1" type="number" class="form-control">
-  </div>
-
-<div class="form-group form-part">
-    <label for="x2"> x2: </label>
-    <input name="x2" type="number" class="form-control">
-    <label for="y2"> y2: </label>
-    <input name="y2" type="number" class="form-control">
-  </div>
-
-  <div class="form-group form-part">
-      <label for="x3"> x3: </label>
-      <input name="x3" type="number" class="form-control">
-      <label for="y3"> y3: </label>
-      <input name="y3" type="number" class="form-control">
-    </div>
+      <label for="x2"> x2: </label>
+      <div class="flex-display">
+        <input ngModel name="x2" type="number" #x2="ngModel" required 
+        class="form-control" placeholder="250">
+        <div class="alert alert-danger" *ngIf="x2.touched && !x2.valid">
+          <div *ngIf="x2.errors.required">x2 הכרחי</div>
+        </div>
+      </div>
   
+      <label for="y2"> y2: </label>
+      <div class="flex-display">
+        <input ngModel name="y2" type="number" #y2="ngModel" required 
+        class="form-control" placeholder="250">
+        <div class="alert alert-danger" *ngIf="y2.touched && !y2.valid">
+          <div *ngIf="y2.errors.required">y2 הכרחי</div>
+        </div>
+      </div>
+    </div>
 
+  <div class="form-group form-part">
+    <label for="x3"> x3: </label>
+    <div class="flex-display">
+      <input ngModel name="x3" type="number" #x3="ngModel" required 
+      class="form-control" placeholder="250">
+      <div class="alert alert-danger" *ngIf="x3.touched && !x3.valid">
+        <div *ngIf="x3.errors.required">x3 הכרחי</div>
+      </div>
+    </div>
+
+    <label for="y3"> y3: </label>
+    <div class="flex-display">
+      <input ngModel name="y3" type="number" #y3="ngModel" required
+      class="form-control" placeholder="550">
+      <div class="alert alert-danger" *ngIf="y3.touched && !y3.valid">
+        <div *ngIf="y3.errors.required">y3 הכרחי</div>
+      </div>
+    </div>
+  </div>
+
+
+  <button class="btn btn-primary" type="submit">שלח</button>
 
 </form>
